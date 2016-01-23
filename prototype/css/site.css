@@ -3,7 +3,7 @@
 }
 
 .wrapper {
-  width: 960px;
+  width: 80%;
   margin: 0 auto;
   padding: 24px;
 }
@@ -42,4 +42,8 @@
 /* Pure Extensions */
 .table-custom {
   width: 100%;
+}
+
+.table-row-custom td{
+  padding: 1em 1em;
 }
