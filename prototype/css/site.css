@@ -1,0 +1,45 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.header {
+
+  font-weight: 300;
+  color: #888;
+}
+
+.header-section {
+  border-bottom: 1px solid currentColor;
+}
+
+
+.album-artwork {
+  padding: 0 2% 0 0;
+}
+
+.album-artwork img {
+  width: 100%;
+}
+
+.tracklist-track {
+  cursor: pointer;
+},
+
+.tracklist-track:active {
+  background-color: #f99;
+}
+
+.tracklist-track:hover {
+  background-color: #ff6b6b;
+}
+
+/* Pure Extensions */
+.table-custom {
+  width: 100%;
+}
