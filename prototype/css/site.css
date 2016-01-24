@@ -9,41 +9,25 @@
 }
 
 .header {
-
   font-weight: 300;
   color: #888;
 }
 
-.header-section {
+.header-primary {
   border-bottom: 1px solid currentColor;
 }
 
-
-.album-artwork {
-  padding: 0 2% 0 0;
+/* Employee list-item */
+.employee-list {}
+.employee-list-item {
+  padding: 8px;
+  margin: 0 0 16px 0;
+  text-align: center; 
 }
-
-.album-artwork img {
-  width: 100%;
+.employee-name {
+  margin: 0;
+  font-size: 1em;
 }
-
-.tracklist-track {
-  cursor: pointer;
-},
-
-.tracklist-track:active {
-  background-color: #f99;
-}
-
-.tracklist-track:hover {
-  background-color: #ff6b6b;
-}
-
-/* Pure Extensions */
-.table-custom {
-  width: 100%;
-}
-
-.table-row-custom td{
-  padding: 1em 1em;
-}
+.employee-picture {}
+.employee-meta {}
+.employee-visit {}
