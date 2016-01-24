@@ -22,12 +22,16 @@
 .employee-list-item {
   padding: 8px;
   margin: 0 0 16px 0;
-  text-align: center; 
+  text-align: center;
 }
 .employee-name {
   margin: 0;
   font-size: 1em;
 }
-.employee-picture {}
+.employee-picture img {
+  display: block;
+  margin: 0 auto;
+  width: 100%
+}
 .employee-meta {}
 .employee-visit {}
