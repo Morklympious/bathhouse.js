@@ -5,7 +5,7 @@
 }
 
 .wrapper {
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
   padding: 24px;
 }
@@ -26,4 +26,12 @@
 
 .custom-table {
   width: 100%;
+}
+
+.pure-button-active {
+  background-color: mistyrose;
+}
+
+.virtue-form {
+  margin: 16px 0;
 }

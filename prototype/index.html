@@ -6,174 +6,61 @@
     <link rel="stylesheet" href="css/pure-min.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/fontello.css">
   </head>
   <body>
     <div id="mount" class="wrapper">
       <h1 class="header header-primary">Benjamin Franklin's Thirteen Virtues</h1>
       <div class="button-group">
-        <button class="custom-button pure-button">Temperance</button>
-        <button class="custom-button pure-button">Silence</button>
-        <button class="custom-button pure-button">Order</button>
-        <button class="custom-button pure-button">Resolution</button>
-        <button class="custom-button pure-button">Frugality</button>
-        <button class="custom-button pure-button">Industry</button>
-        <button class="custom-button pure-button">Sincerity</button>
-        <button class="custom-button pure-button">Justice</button>
-        <button class="custom-button pure-button">Moderation</button>
-        <button class="custom-button pure-button">Cleanliness</button>
-        <button class="custom-button pure-button">Tranquility</button>
-        <button class="custom-button pure-button">Chastity</button>
-        <button class="custom-button pure-button">Humility</button>
+        <button class="js virtue custom-button pure-button">Temperance</button>
+        <button class="js virtue custom-button pure-button pure-button-active">Silence</button>
+        <button class="js virtue custom-button pure-button">Order</button>
+        <button class="js virtue custom-button pure-button">Resolution</button>
+        <button class="js virtue custom-button pure-button">Frugality</button>
+        <button class="js virtue custom-button pure-button">Industry</button>
+        <button class="js virtue custom-button pure-button">Sincerity</button>
+        <button class="js virtue custom-button pure-button">Justice</button>
+        <button class="js virtue custom-button pure-button">Moderation</button>
+        <button class="js virtue custom-button pure-button">Cleanliness</button>
+        <button class="js virtue custom-button pure-button">Tranquility</button>
+        <button class="js virtue custom-button pure-button">Chastity</button>
+        <button class="js virtue custom-button pure-button">Humility</button>
+        <button class="js virtue add-virtue pure-button"><i class="icon-plus"></i></button>
       </div>
 
-      <h1 class="header header-primary">Weekly Virtues Checklist</h1>
-      <table class="custom-table pure-table pure-table-bordered">
-        <thead>
-          <th></th>
-          <th>Sunday</th>
-          <th>Monday</th>
-          <th>Tuesday</th>
-          <th>Wednesday</th>
-          <th>Thursday</th>
-          <th>Friday</th>
-          <th>Saturday</th>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Temperance</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Silence</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Order</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Resolution</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Frugality</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Industry</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Sincerity</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Justice</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Moderation</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Cleanliness</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Tranquility</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Chastity</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Humility</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+      <!-- Toggleable virtue form when clicking '+' button -->
+      <div class="js virtue-form">
+        <h2 class="header">Add new virtue</h2>
+        <form id="new-virtue" class="pure-form pure-form-stacked">
+          <div class="pure-control-group pure-g">
+            <label for="virtue" class="pure-u-1 pure-u-sm-1-4">
+              Virtue name:
+            </label>
+            <input name="virtue" type="text" class="pure-u-1 pure-u-sm-3-4"/>
+          </div>
+          <div class="pure-control-group pure-g">
+            <label for="description" class="pure-u-1 pure-u-sm-1-4">
+              Virtue description:
+            </label>
+            <textarea rows="4" cols="80" name="description" class="pure-u-1 pure-u-sm-3-4" form="new-virtue">new virtue?</textarea>
+          </div>
+          <div class="pure-controls pure-control-group ">
+              <button type="submit" class="pure-button pure-button-primary ">Submit</button>
+              <button type="submit" class="pure-button pure-button-danger ">Clear</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Virtue shows up when you press that virtues button.-->
+      <div class="js virtue-explanation">
+        <h1 class="header header-primary">Selected virtue</h1>
+        <h2 class="header">Silence</h2>
+        <p>Speak not but what may benefit others or yourself; avoid trifling conversation.</p>
+      </div>
     </div>
 
   <!-- 1.12 -->
   <script src="js/jquery.min.js"></script>
+  <script src="js/form-to-obj.min.js"></script>
   </body>
 </html>
