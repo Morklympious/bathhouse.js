@@ -1,0 +1,39 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.header {
+  font-weight: 300;
+  color: #888;
+}
+
+.header-primary {
+  border-bottom: 1px solid currentColor;
+}
+
+.muted {
+  color: #ccc;
+}
+
+.custom-button {
+  margin: 2px;
+  min-width: 140px;
+}
+
+.custom-table {
+  width: 100%;
+}
+
+.pure-button-active {
+  background-color: mistyrose;
+}
+
+.virtue-form {
+  margin: 16px 0;
+}
