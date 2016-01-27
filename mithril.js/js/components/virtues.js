@@ -1,11 +1,12 @@
 window.mComponents.virtues = window.mComponents.virtues = (function(){
+
   var css = {
     btnGroup: 'button-group',
     btn: 'js virtue custom-button pure-button',
     btnActive: 'js virtue custom-button pure-button pure-button-active'
   }
 
-  var _vModel = {
+  var vm = {
     init: function() {
       var self = this;
       self.active = m.prop(0)
@@ -13,21 +14,27 @@ window.mComponents.virtues = window.mComponents.virtues = (function(){
   };
 
   function _controller() {
-    _vModel.init();
-    this.virtues = window.mModels.virtues;
+    vm.init();
+    this.virtues = window.mData.virtues;
   }
 
   function _view(ctrl, args) {
+    var header = window.mComponents.header;
+    var active = vm.active;
+    var virtues = ctrl.virtues;
+
     return m('div', {class: css.btnGroup}, [
 
-      ctrl.virtues.map(function(item, idx){
+      m.component(header, {content: 'Virtue'}),
+      virtues.map(function(virtue, idx){
         return m('button', {
-          class: _vModel.active() === idx ? css.btnActive : css.btn,
-          onclick: _vModel.active.bind(null, idx)
-        }, item.name);
+          class: active() === idx ? css.btnActive : css.btn,
+          onclick: vm.active.bind(null, idx)
+        }, virtue.name);
       }),
 
-      m('div', ctrl.virtues[_vModel.active()].description)
+      m.component(header, {content: 'Description'}),
+      m('div', ctrl.virtues[vm.active()].description)
     ]);
   }
 

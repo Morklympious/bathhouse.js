@@ -1,5 +1,5 @@
-window.mModels = {};
-window.mModels.virtues = window.mModels.virtues = (function(){
+window.mData = {};
+window.mData.virtues = window.mData.virtues = (function(){
   return [
     {
       name: "Temperance",
