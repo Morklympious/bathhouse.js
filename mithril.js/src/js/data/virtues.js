@@ -1,6 +1,5 @@
-window.mData = {};
-window.mData.virtues = window.mData.virtues = (function(){
-  return [
+
+  module.exports = [
     {
       name: "Temperance",
       description: "Eat not to dullness; drink not to elevation."
@@ -54,4 +53,3 @@ window.mData.virtues = window.mData.virtues = (function(){
       description: "Imitate Jesus and Socrates."
     }
   ]
-}());

@@ -1,0 +1,28 @@
+.btn {
+  composes: global(pure-button),
+    global(pure-u-1-2),
+    global(pure-u-md-1-4);
+  border: 1px solid #444;
+}
+
+.active {
+  composes: btn;
+  background-color: mistyrose;
+}
+
+.icon {
+  composes: global(icon-plus);
+}
+
+.toggle {
+  composes: btn, icon;
+}
+
+.header {
+  composes: global(header-primary)
+}
+
+.addbtn {
+  composes: btn;
+  background: lightgreen;
+}

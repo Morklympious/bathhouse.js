@@ -1,6 +1,5 @@
-window.mModels = {};
-window.mModels.virtues = window.mModels.virtues = (function(){
-  return [
+
+  module.exports = [
     {
       name: "Temperance",
       description: "Eat not to dullness; drink not to elevation."
@@ -54,4 +53,3 @@ window.mModels.virtues = window.mModels.virtues = (function(){
       description: "Imitate Jesus and Socrates."
     }
   ]
-}());

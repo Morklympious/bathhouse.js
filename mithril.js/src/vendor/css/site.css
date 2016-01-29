@@ -1,7 +1,9 @@
 *, *:before, *:after {
   box-sizing: border-box;
 }
-
+.crazybutton {
+  composes: pure-button
+}
 .wrapper {
   width: 80%;
   margin: 0 auto;
@@ -9,12 +11,11 @@
 }
 
 .header {
-  font-weight: 300;
-  color: #888;
+
 }
 
 .header-primary {
-  border-bottom: 1px solid currentColor;
+
 }
 
 .muted {
