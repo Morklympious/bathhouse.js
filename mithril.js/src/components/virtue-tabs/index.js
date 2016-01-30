@@ -15,7 +15,8 @@ function controller() {
   ctrl.adding = m.prop(false);
 
   ctrl.addVirtue = function(item) {
-    ctrl.virtues.push({name: 'DOOT', description: 'JA;SDLKFJASD;KLFJ'})
+    console.log('ITEM', item);
+    ctrl.virtues.push(item)
   }
 
 }

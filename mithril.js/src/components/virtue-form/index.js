@@ -5,7 +5,21 @@ var css = require('./style.css');
 function controller(attrs) {
   var ctrl = this;
 
-  ctrl.add = attrs.add;
+  ctrl.virtue = {
+    name: m.prop('234'),
+    description: m.prop('123')
+  };
+
+  ctrl.clear = function() {
+    for (var key in ctrl.virtue) {
+      ctrl.virtue[key]('');
+    }
+  }
+
+  ctrl.add = function() {
+    attrs.add({name: ctrl.virtue.name(), description: ctrl.virtue.description()})
+    ctrl.clear();
+  }
 }
 
 function view(ctrl, attrs) {
@@ -16,11 +30,11 @@ function view(ctrl, attrs) {
       m('form', {id: 'virtue-form', class: css['form-container']}, [
         m('div', {class: css['form-control-group']}, [
           m('label', {for: 'virtue', class: css['label']}, 'Virtue name: '),
-          m('input', {name: 'virtue', type: 'text', class: css['input']})
+          m('input', {oninput: m.withAttr("value", ctrl.virtue.name), name: 'virtue', type: 'text', class: css['input'], value: ctrl.virtue.name()})
         ]),
         m('div', {class: css['form-control-group']}, [
           m('label', {for: 'description', class: css['label']}, 'Description'),
-          m('textarea', {name: 'description', class: css['input']})
+          m('textarea', {oninput: m.withAttr("value", ctrl.virtue.description), name: 'description', class: css['input'], value: ctrl.virtue.description()})
         ]),
         m('div', {class: css['form-controls']}, [
           m('button', {
@@ -30,7 +44,8 @@ function view(ctrl, attrs) {
           }, 'Submit'),
           m('button', {
             class: 'pure-button pure-button-danger',
-            type: 'button'
+            type: 'button',
+            onclick: ctrl.clear
           }, 'Clear')
         ]),
       ])
