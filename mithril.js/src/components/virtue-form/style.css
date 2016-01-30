@@ -1,0 +1,44 @@
+.header {
+  composes: global(header-primary)
+}
+
+.form-container {
+  composes: global(pure-form), global(pure-form-stacked);
+}
+
+.form-control-group {
+  composes: global(pure-g), global(pure-control-group);
+}
+
+.form-controls {
+  composes: global(pure-controls);
+}
+
+
+.unit-small-one-fourth {
+  composes: global(pure-u-sm-1-4);
+}
+
+.unit-small-three-fourths {
+  composes: global(pure-u-sm-3-4);
+}
+
+.unit-one {
+  composes: global(pure-u-1);
+}
+
+.label {
+  composes: unit-one, unit-small-one-fourth;
+}
+
+.input {
+  composes: unit-one, unit-small-three-fourths;
+}
+
+.submit-btn {
+  composes: global(pure-button);
+}
+
+.cancel-btn {
+  composes: global(pure-button);
+}

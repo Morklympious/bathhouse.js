@@ -1,28 +1,41 @@
 var m = require('mithril');
+var css = require('./style.css');
 
-function controller() {
 
+function controller(attrs) {
+  var ctrl = this;
+
+  ctrl.add = attrs.add;
 }
 
-function view(ctrl, args) {
+function view(ctrl, attrs) {
 
-  return m('div', {}, [
-    m('h2', {class: 'header'}, 'Add new virtue'),
-    m('form', {id: 'new-virtue', class: 'pure-form pure-form-stacked'}, [
-      m('div', {class: 'pure-control-group pure-g'}, [
-        m('label', {for: 'virtue', class: 'pure-u-1 pure-u-sm-1-4'}, 'Virtue name: '),
-        m('input', {name: 'virtue', type: 'text', class: 'pure-u-1 pure-u-sm-3-4'})
-      ]),
-      m('div', {class: 'pure-control-group pure-g'}, [
-        m('label', {for: 'description', class: 'pure-u-1 pure-u-sm-1-4'}, 'Description'),
-        m('textarea', {name: 'description', class: 'pure-u-1 pure-u-sm-3-4'})
-      ]),
-      m('div', {class: 'pure-controls pure-control-group'}, [
-        m('button', {class: 'pure-button pure-button-primary', type: 'button'}, 'Submit'),
-        m('button', {class: 'pure-button pure-button-danger', type: 'button'}, 'Clear')
-      ]),
-    ])
-  ])
+  return (
+    m('div', {}, [
+      m('h2', {class: css['header']}, 'Add new virtue'),
+      m('form', {id: 'virtue-form', class: css['form-container']}, [
+        m('div', {class: css['form-control-group']}, [
+          m('label', {for: 'virtue', class: css['label']}, 'Virtue name: '),
+          m('input', {name: 'virtue', type: 'text', class: css['input']})
+        ]),
+        m('div', {class: css['form-control-group']}, [
+          m('label', {for: 'description', class: css['label']}, 'Description'),
+          m('textarea', {name: 'description', class: css['input']})
+        ]),
+        m('div', {class: css['form-controls']}, [
+          m('button', {
+            class: 'pure-button pure-button-primary',
+            type: 'button',
+            onclick: ctrl.add
+          }, 'Submit'),
+          m('button', {
+            class: 'pure-button pure-button-danger',
+            type: 'button'
+          }, 'Clear')
+        ]),
+      ])
+  ]));
+
 }
 
   module.exports = {

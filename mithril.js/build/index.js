@@ -1,7 +1,7 @@
 var fs = require('fs');
 var browserify = require('browserify');
 var builder = browserify('mithril.js/src/index.js', {
-
+  debug: true
 })
 
 builder.plugin('watchify');

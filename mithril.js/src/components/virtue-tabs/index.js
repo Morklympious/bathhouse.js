@@ -1,56 +1,54 @@
 var m =     require('mithril');
 var css =   require('./style.css');
-var data =  require('../../external/dummy-data/virtues.js')
-var form = require('../virtue-form');
+var parser = require('../../vendor/js/parse-form.js');
+// Data
+var data =  require('../../external/dummy-data/virtues.js');
+
+// Components
+var form =  require('../virtue-form');
 
 function controller() {
-  var ctrl = {
+  var ctrl = this;
 
-    virtues: data,
-    active: 0,
-    adding: m.prop(false),
+  ctrl.virtues = data;
+  ctrl.active = m.prop(0);
+  ctrl.adding = m.prop(false);
 
-    onClickTabs: function(e) {
-      var idx = e.target.getAttribute('data-index');
-      if(idx) {
-        ctrl.active = +idx;
-      }
-    }
-
+  ctrl.addVirtue = function(item) {
+    ctrl.virtues.push({name: 'DOOT', description: 'JA;SDLKFJASD;KLFJ'})
   }
-  return ctrl;
+
 }
 
 function view(ctrl) {
 
-  var virtues = ctrl.virtues;
+  // Controller properties
+  var virtues = ctrl.virtues,
+      active = ctrl.active();
+
+  // Conditional Components
+  var VirtueForm = ctrl.adding() ? m(form, {add: ctrl.addVirtue}) : null;
 
   return m('div', [
-    m('div', {
-        onclick: ctrl.onClickTabs,
-        class:'pure-g'
-      }, [
+      m('div', {class: css['grid-container']}, [
 
-        virtues.map(function(virtue, idx){
-          var btn = ctrl.active === idx ? css.active : css.btn;
+          ctrl.virtues.map(function(virtue, idx){
           return m('button', {
-                      class: btn,
-                      'data-index': idx
-                 }, virtue.name);
-        }),
+              class: css[active === idx ? 'active' : 'btn'],
+              onclick: ctrl.active.bind(null, idx)
+              }, virtue.name);
+          }),
 
-        m('button', {
-          class: css.addbtn,
-          onclick: ctrl.adding(!ctrl.adding())
-        }, 'New virtue')
+          m('button', {
+            class: css['add-button'],
+            onclick: ctrl.adding.bind(null, !ctrl.adding())
+          }, 'New virtue')
 
       ]),
-
-    ctrl.adding ? m.component(form) : '',
-
-    m('h1', {class: css.header}, "Description"),
-    m('div', ctrl.virtues[ctrl.active].description),
-  ]);
+      VirtueForm,
+      m('h1', {class: css['header']}, 'Description'),
+      m('div', virtues[active]['description'])
+    ]);
 }
 
 
