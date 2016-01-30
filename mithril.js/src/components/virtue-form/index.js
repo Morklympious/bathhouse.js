@@ -6,8 +6,8 @@ function controller(attrs) {
   var ctrl = this;
 
   ctrl.virtue = {
-    name: m.prop('234'),
-    description: m.prop('123')
+    name: m.prop(''),
+    description: m.prop('')
   };
 
   ctrl.clear = function() {
