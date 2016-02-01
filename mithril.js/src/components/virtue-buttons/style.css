@@ -1,8 +1,9 @@
 .btn {
   composes: global(pure-button),
-    global(pure-u-1-2),
+    global(pure-u-1),
+    global(pure-u-xs-1-2),
     global(pure-u-md-1-4);
-  border: 1px solid #444;
+
 }
 
 .grid-container {
@@ -11,7 +12,8 @@
 
 .active {
   composes: btn;
-  background-color: mistyrose;
+  background-color: #FFF99E;
+  font-weight: bold;
 }
 
 .icon {
@@ -22,11 +24,13 @@
   composes: btn, icon;
 }
 
-.header {
-  composes: global(header-primary)
-}
 
 .add-button {
   composes: btn;
   background: lightgreen;
 }
+
+.cancel-button {
+   composes: btn;
+   background-color: #FF4A4D;
+ }

@@ -14,6 +14,14 @@
   composes: global(pure-controls);
 }
 
+.btn {
+  composes: global(pure-button)
+}
+
+.btn-primary {
+  composes: btn, global(pure-button-primary);
+}
+
 
 .unit-small-one-fourth {
   composes: global(pure-u-sm-1-4);

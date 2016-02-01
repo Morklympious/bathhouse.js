@@ -7,48 +7,37 @@ var data =  require('../../external/dummy-data/virtues.js');
 // Components
 var form =  require('../virtue-form');
 
-function controller() {
+function controller(opts) {
   var ctrl = this;
 
-  ctrl.virtues = data;
-  ctrl.active = m.prop(0);
-  ctrl.adding = m.prop(false);
-
-  ctrl.addVirtue = function(item) {
-    console.log('ITEM', item);
-    ctrl.virtues.push(item)
-  }
+  ctrl.virtues = opts.virtues;
+  ctrl.active = opts.active;
+  ctrl.adding = opts.adding
 
 }
 
-function view(ctrl) {
+function view(ctrl, opts) {
 
   // Controller properties
   var virtues = ctrl.virtues,
       active = ctrl.active();
 
-  // Conditional Components
-  var VirtueForm = ctrl.adding() ? m(form, {add: ctrl.addVirtue}) : null;
-
   return m('div', [
       m('div', {class: css['grid-container']}, [
 
           ctrl.virtues.map(function(virtue, idx){
-          return m('button', {
-              class: css[active === idx ? 'active' : 'btn'],
-              onclick: ctrl.active.bind(null, idx)
+            return m('button', {
+                class: css[active === idx ? 'active' : 'btn'],
+                onclick: ctrl.active.bind(null, idx)
               }, virtue.name);
           }),
 
           m('button', {
-            class: css['add-button'],
+            class: css[ctrl.adding() ? 'cancel-button' : 'add-button'],
             onclick: ctrl.adding.bind(null, !ctrl.adding())
-          }, 'New virtue')
+          }, ctrl.adding() ? 'Close Virtue Form' : 'Add New Virtue')
 
       ]),
-      VirtueForm,
-      m('h1', {class: css['header']}, 'Description'),
-      m('div', virtues[active]['description'])
     ]);
 }
 
