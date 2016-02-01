@@ -1,8 +1,15 @@
-var fs = require('fs');
-var browserify = require('browserify');
-var builder = browserify('mithril.js/src/index.js', {
-  debug: true
-})
+var fs          = require('fs'),
+    path        = require('path'),
+    express      = require('express'),
+    ecstatic    = require('ecstatic'),
+    moment      = require('moment'),
+    browserify  = require('browserify');
+
+var server  = express(),
+    builder = browserify('mithril.js/src/index.js', {
+      debug: true
+    });
+
 
 builder.plugin('watchify');
 builder.plugin("modular-css", {
@@ -12,15 +19,22 @@ builder.plugin("modular-css", {
     ]
 });
 
+builder.on('update', bundle);
+bundle();
+
 function bundle() {
   builder.bundle(function(err, out) {
-    if(err) console.error(err.toString());
-    fs.writeFileSync("mithril.js/dist/bundle.js", out);
-
-    console.log('rebundled scripts at ' + new Date().toString())
+    var outpath = path.join(__dirname, '../', 'dist', 'bundle.js');
+    fs.writeFileSync(outpath, out);
+    console.log('bundle.js rebuilt -- '+ moment().format('h:mm:ss a'));
   });
 }
 
-builder.on('update', bundle);
+server.use(ecstatic({
+  root: path.join(__dirname, '../'),
+  defaultExt: 'html'
+}))
 
-bundle();
+server.listen(8080);
+
+console.log('server listening at :8080');

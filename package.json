@@ -4,7 +4,7 @@
   "description": "_who would name a project Bathhouse.js?_",
   "main": "mithril.js",
   "scripts": {
-    "mithril": "browserify ./mithril.js/src/js/application.js -p [ modular-css --css ./mithril.js/dist/css/common.css ] -o mithril.js/dist/bundle.js"
+    "mithril": "node mithril.js/build"
   },
   "repository": {
     "type": "git",
@@ -18,8 +18,11 @@
   "homepage": "https://github.com/morklympious/bathhouse.js#readme",
   "devDependencies": {
     "browserify": "^13.0.0",
+    "ecstatic": "^1.4.0",
+    "express": "^4.13.4",
     "mithril": "^0.2.2-rc.1",
     "modular-css": "^0.11.2",
+    "moment": "^2.11.1",
     "postcss-import": "^8.0.2",
     "purecss": "^0.6.0",
     "watchify": "^3.7.0"

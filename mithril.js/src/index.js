@@ -44,4 +44,4 @@ var application = {
   }
 }
 
-m.mount(document.getElementById('test-mount'), application);
+m.mount(document.getElementById('mount'), application);
