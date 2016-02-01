@@ -1,27 +1,33 @@
-var m      = require('mithril');
-var css    = require('./style.css');
+var m =     require('mithril');
+var css =   require('./style.css');
 var parser = require('../../vendor/js/parse-form.js');
-
 // Data
-var data   = require('../../external/dummy-data/virtues.js');
+var data =  require('../../external/dummy-data/virtues.js');
 
 // Components
-var form   = require('../virtue-form');
+var form =  require('../form');
 
-function controller(opts) {
+function controller() {
   var ctrl = this;
 
-  ctrl.virtues = opts.virtues;
-  ctrl.active  = opts.active;
-  ctrl.adding  = opts.adding
+  ctrl.virtues = data;
+  ctrl.active = m.prop(0);
+  ctrl.adding = m.prop(false);
+
+  ctrl.addVirtue = function(item) {
+    ctrl.virtues.push(item)
+  }
 
 }
 
-function view(ctrl, opts) {
+function view(ctrl) {
 
   // Controller properties
   var virtues = ctrl.virtues,
       active = ctrl.active();
+
+  // Conditional Components
+  var VirtueForm = ctrl.adding() ? m(form, {add: ctrl.addVirtue}) : null;
 
   return m('div', [
       m('div', {class: css['grid-container']}, [
@@ -34,11 +40,14 @@ function view(ctrl, opts) {
           }),
 
           m('button', {
-            class: css[ctrl.adding() ? 'cancel-button' : 'add-button'],
+            class: css['add-button'],
             onclick: ctrl.adding.bind(null, !ctrl.adding())
-          }, ctrl.adding() ? 'Close Virtue Form' : 'Add New Virtue')
+          }, 'New virtue')
 
       ]),
+      VirtueForm,
+      m('h1', {class: css['header']}, 'Description'),
+      m('div', virtues[active]['description'])
     ]);
 }
 

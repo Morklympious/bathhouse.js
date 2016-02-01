@@ -3,8 +3,9 @@ var css = require('./style.css');
 
 function controller(opts) {
    var ctrl = this;
+   
    ctrl.virtues = opts.virtues
-   ctrl.active = opts.active;
+   ctrl.active  = opts.active;
 }
 
 function view(ctrl, opts) {
