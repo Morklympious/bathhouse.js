@@ -1,6 +1,7 @@
 .btn {
   composes: global(pure-button),
-    global(pure-u-1-2),
+    global(pure-u-1),
+    global(pure-u-xs-1-2),
     global(pure-u-md-1-4);
   border: 1px solid #444;
 }
@@ -22,9 +23,6 @@
   composes: btn, icon;
 }
 
-.header {
-  composes: global(header-primary)
-}
 
 .add-button {
   composes: btn;

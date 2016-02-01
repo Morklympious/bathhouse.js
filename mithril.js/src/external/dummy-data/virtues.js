@@ -58,6 +58,7 @@ var virtues = [
 module.exports = {
     virtues: virtues,
     add: function(obj) {
+      console.log('we add now', obj);
       return virtues.push(obj);
     },
     remove: function(i) {

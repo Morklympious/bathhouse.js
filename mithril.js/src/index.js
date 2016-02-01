@@ -16,16 +16,29 @@ var application = {
     ctrl.virtues = data.virtues;
     ctrl.active = m.prop(0);
     ctrl.adding = m.prop(false);
-    ctrl.add = data.add;
+    ctrl.add = function(obj) {
+      console.log('we add now', obj)
+      ctrl.virtues.push(obj);
+      console.log('after adding', ctrl.virtues);
+    };
   },
 
   view: function(ctrl) {
     return m('div', [
       m('h1', {class: 'header-primary'},
        'Benjamin Franklin\'s Thirteen Virtues'),
-      m(VirtueButtons, {virtues: ctrl.virtues, add: ctrl.addVirtue, active: ctrl.active, adding: ctrl.adding}),
-      m(VirtueDescription, {virtues: ctrl.virtues, active: ctrl.active}),
-      m(VirtueForm, {add: ctrl.add})
+      m(VirtueButtons, {
+        virtues: ctrl.virtues,
+        active: ctrl.active,
+        adding: ctrl.adding
+      }),
+      m(VirtueDescription, {
+        virtues: ctrl.virtues,
+        active: ctrl.active
+      }),
+      m(VirtueForm, {
+        add: ctrl.add
+      })
     ]);
   }
 }
