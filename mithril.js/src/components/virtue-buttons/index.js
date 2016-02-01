@@ -33,9 +33,9 @@ function view(ctrl, opts) {
           }),
 
           m('button', {
-            class: css['add-button'],
+            class: css[ctrl.adding() ? 'cancel-button' : 'add-button'],
             onclick: ctrl.adding.bind(null, !ctrl.adding())
-          }, 'New virtue')
+          }, ctrl.adding() ? 'Close Virtue Form' : 'Add New Virtue')
 
       ]),
     ]);

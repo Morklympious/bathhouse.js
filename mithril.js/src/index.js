@@ -16,11 +16,11 @@ var application = {
     ctrl.virtues = data.virtues;
     ctrl.active = m.prop(0);
     ctrl.adding = m.prop(false);
+
     ctrl.add = function(obj) {
-      console.log('we add now', obj)
       ctrl.virtues.push(obj);
-      console.log('after adding', ctrl.virtues);
     };
+
   },
 
   view: function(ctrl) {
@@ -36,9 +36,10 @@ var application = {
         virtues: ctrl.virtues,
         active: ctrl.active
       }),
+      ctrl.adding() ?
       m(VirtueForm, {
         add: ctrl.add
-      })
+      }) : null
     ]);
   }
 }
