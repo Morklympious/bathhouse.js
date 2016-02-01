@@ -7,6 +7,7 @@ var data   = require('../../external/dummy-data/virtues.js');
 
 // Components
 var form   = require('../virtue-form');
+var button = require('../_iotas/button');
 
 function controller(opts) {
   var ctrl = this;
@@ -32,7 +33,6 @@ function view(ctrl, opts) {
                 onclick: ctrl.active.bind(null, idx)
               }, virtue.name);
           }),
-
           m('button', {
             class: css[ctrl.adding() ? 'cancel-button' : 'add-button'],
             onclick: ctrl.adding.bind(null, !ctrl.adding())
