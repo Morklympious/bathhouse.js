@@ -27,15 +27,18 @@ var application = {
     return m('div', [
       m('h1', {class: 'header-primary'},
        'Benjamin Franklin\'s Thirteen Virtues'),
+
       m(VirtueButtons, {
         virtues: ctrl.virtues,
         active: ctrl.active,
         adding: ctrl.adding
       }),
+
       m(VirtueDescription, {
         virtues: ctrl.virtues,
         active: ctrl.active
       }),
+
       ctrl.adding() ?
       m(VirtueForm, {
         add: ctrl.add

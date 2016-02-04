@@ -5,10 +5,10 @@ var fs          = require('fs'),
     moment      = require('moment'),
     browserify  = require('browserify');
 
-var server  = express(),
-    builder = browserify('mithril.js/src/index.js', {
-      debug: true
-    });
+var server      = express(),
+    builder     = browserify('mithril.js/src/index.js', {
+                  debug: true
+                });
 
 
 builder.plugin('watchify');
@@ -33,7 +33,7 @@ function bundle() {
 server.use(ecstatic({
   root: path.join(__dirname, '../'),
   defaultExt: 'html'
-}))
+}));
 
 server.listen(8080);
 
