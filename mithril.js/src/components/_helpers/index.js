@@ -7,7 +7,7 @@ function binds(data) {
       } else data[e.target.name] = e.target.value;
     }
   };
-};
+}
 
 module.exports = {
   binds: binds

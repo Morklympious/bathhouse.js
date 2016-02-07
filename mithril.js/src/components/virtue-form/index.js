@@ -31,7 +31,7 @@ function controller(opts) {
   }
 }
 
-function view(ctrl, attrs) {
+function view(ctrl) {
 
   return m('div', _binds(ctrl.virtue), [
       m('h2', {class: css['header']}, 'Add new virtue'),
@@ -78,7 +78,7 @@ function view(ctrl, attrs) {
             onclick: ctrl.clear
           }, 'Clear')
 
-        ]),
+        ])
       ])
     ])
 }

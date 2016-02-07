@@ -1,0 +1,8 @@
+{
+    "parser": "espree",
+    "extends": "eslint:recommended",
+    "env": {
+        "node": true,
+        "browser": true
+      }
+}
