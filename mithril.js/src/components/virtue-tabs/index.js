@@ -1,6 +1,6 @@
-var m =     require('mithril');
-var css =   require('./style.css');
-var parser = require('../../vendor/js/parse-form.js');
+var m =     require('mithril'),
+    css =   require('./style.css');
+
 // Data
 var data =  require('../../external/dummy-data/virtues.js');
 

@@ -1,5 +1,5 @@
-var m = require('mithril');
-var css = require('./style.css');
+var m = require('mithril'),
+    css = require('./style.css');
 
 // helpers
 var _binds = require('../_helpers').binds;

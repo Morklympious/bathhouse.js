@@ -1,13 +1,5 @@
-var m      = require('mithril');
-var css    = require('./style.css');
-var parser = require('../../vendor/js/parse-form.js');
-
-// Data
-var data   = require('../../external/dummy-data/virtues.js');
-
-// Components
-var form   = require('../virtue-form');
-var button = require('../_iotas/button');
+var m      = require('mithril'),
+    css    = require('./style.css');
 
 function controller(opts) {
   var ctrl = this;
@@ -18,11 +10,9 @@ function controller(opts) {
 
 }
 
-function view(ctrl, opts) {
+function view(ctrl) {
 
-  // Controller properties
-  var virtues = ctrl.virtues,
-      active = ctrl.active();
+  var active = ctrl.active();
 
   return m('div', [
       m('div', {class: css['grid-container']}, [
@@ -38,7 +28,7 @@ function view(ctrl, opts) {
             onclick: ctrl.adding.bind(null, !ctrl.adding())
           }, ctrl.adding() ? 'Close Virtue Form' : 'Add New Virtue')
 
-      ]),
+      ])
     ]);
 }
 

@@ -10,7 +10,7 @@ require('./global.css');
 
 
 var application = {
-  controller: function(opts) {
+  controller: function() {
     var ctrl = this;
 
     ctrl.virtues = data.virtues;

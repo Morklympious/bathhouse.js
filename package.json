@@ -4,7 +4,8 @@
   "description": "_who would name a project Bathhouse.js?_",
   "main": "mithril.js",
   "scripts": {
-    "mithril": "node mithril.js/build"
+    "mithril-bundle": "node mithril.js/build/bundle",
+    "mithril-serve": "node mithril.js/build/server"
   },
   "repository": {
     "type": "git",
