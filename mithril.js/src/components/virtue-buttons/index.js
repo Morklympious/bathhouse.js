@@ -18,15 +18,20 @@ function view(ctrl) {
       m('div', {class: css['grid-container']}, [
 
           ctrl.virtues.map(function(virtue, idx){
-            return m('button', {
-                class: css[active === idx ? 'active' : 'btn'],
-                onclick: ctrl.active.bind(null, idx)
-              }, virtue.name);
+            return m('div', {class: css['btn-container'] }, [
+              m('button', {
+                  class: css[active === idx ? 'active' : 'btn'],
+                  onclick: ctrl.active.bind(null, idx)
+                }, virtue.name)
+            ]);
           }),
-          m('button', {
-            class: css[ctrl.adding() ? 'cancel-button' : 'add-button'],
-            onclick: ctrl.adding.bind(null, !ctrl.adding())
-          }, ctrl.adding() ? 'Close Virtue Form' : 'Add New Virtue')
+          m('div', {class: css['btn-container'] }, [
+            m('button', {
+              class: css[ctrl.adding() ? 'cancel-button' : 'add-button'],
+              onclick: ctrl.adding.bind(null, !ctrl.adding())
+            }, ctrl.adding() ? 'Close Form' : 'Add New Virtue')
+          ])
+
 
       ])
     ]);

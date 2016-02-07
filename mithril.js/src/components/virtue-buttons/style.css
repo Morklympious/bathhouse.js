@@ -1,8 +1,15 @@
+.btn-container {
+  composes: global(pure-u-1),
+            global(pure-u-xs-1-2),
+            global(pure-u-md-1-4);
+
+  padding: 4px;
+}
+
 .btn {
   composes: global(pure-button),
-    global(pure-u-1),
-    global(pure-u-xs-1-2),
-    global(pure-u-md-1-4);
+            global(pure-u-1);
+
 
 }
 

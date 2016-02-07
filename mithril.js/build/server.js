@@ -24,6 +24,9 @@ bundle();
 
 function bundle() {
   builder.bundle(function(err, out) {
+
+    if(err) console.log(err);
+
     var outpath = path.join(__dirname, '../', 'dist', 'bundle.js');
     fs.writeFileSync(outpath, out);
     console.log('bundle.js rebuilt -- '+ moment().format('h:mm:ss a'));
