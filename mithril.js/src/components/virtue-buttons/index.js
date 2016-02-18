@@ -21,7 +21,7 @@ function view(ctrl) {
             return m('div', {class: css['btn-container'] }, [
               m('button', {
                   class: css[active === idx ? 'active' : 'btn'],
-                  onclick: ctrl.active.bind(null, idx)
+                  onclick: active.bind(null, idx)
                 }, virtue.name)
             ]);
           }),

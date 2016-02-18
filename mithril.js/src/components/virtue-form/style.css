@@ -44,9 +44,9 @@
 }
 
 .submit-btn {
-  composes: global(pure-button);
+  composes: btn
 }
 
 .cancel-btn {
-  composes: global(pure-button);
+  composes: btn
 }

@@ -45,7 +45,9 @@ function view(ctrl) {
           }, 'New virtue')
 
       ]),
+      // == If adding virtue: == //
       VirtueForm,
+      // == endif; //
       m('h1', {class: css['header']}, 'Description'),
       m('div', virtues[active]['description'])
     ]);
