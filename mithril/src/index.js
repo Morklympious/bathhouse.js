@@ -1,9 +1,9 @@
 var m = require('mithril');
 var data = require('./external/dummy-data/virtues.js');
 
-var VirtueButtons = require('./components/virtue-buttons');
+var VirtueButtons     = require('./components/virtue-buttons');
 var VirtueDescription = require('./components/virtue-description');
-var VirtueForm = require('./components/virtue-form');
+var VirtueForm        = require('./components/virtue-form');
 
 // Require for bundling
 require('./global.css');

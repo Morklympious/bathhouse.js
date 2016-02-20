@@ -6,8 +6,7 @@ function controller(opts) {
 
   ctrl.virtues = opts.virtues;
   ctrl.active  = opts.active;
-  ctrl.adding  = opts.adding
-
+  ctrl.adding  = opts.adding;
 }
 
 function view(ctrl) {
@@ -21,7 +20,7 @@ function view(ctrl) {
             return m('div', {class: css['btn-container'] }, [
               m('button', {
                   class: css[active === idx ? 'active' : 'btn'],
-                  onclick: active.bind(null, idx)
+                  onclick: ctrl.active.bind(null, idx)
                 }, virtue.name)
             ]);
           }),
