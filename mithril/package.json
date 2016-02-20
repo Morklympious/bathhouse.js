@@ -1,0 +1,32 @@
+{
+  "name": "bathhouse.js",
+  "version": "1.0.0",
+  "description": "_who would name a project Bathhouse.js?_",
+  "main": "mithril.js",
+  "scripts": {
+    "mithril-bundle": "node build/bundle",
+    "mithril-serve": "node build/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morklympious/bathhouse.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/morklympious/bathhouse.js/issues"
+  },
+  "homepage": "https://github.com/morklympious/bathhouse.js#readme",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "ecstatic": "^1.4.0",
+    "eslint": "^1.10.3",
+    "express": "^4.13.4",
+    "mithril": "^0.2.2-rc.1",
+    "modular-css": "^0.11.2",
+    "moment": "^2.11.1",
+    "postcss-import": "^8.0.2",
+    "purecss": "^0.6.0",
+    "watchify": "^3.7.0"
+  }
+}
