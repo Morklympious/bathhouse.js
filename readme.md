@@ -12,4 +12,5 @@ It's basically a TODOMVC with a super contrived example of something like a musi
 I plan to work through a rough prototype in hardcoded HTML/CSS/JS (because structuring a project while trying to learn a framework is difficult).
 
 ## Implementations
-Currently no implementations yet. Check back soon!
+
+- Mithril
